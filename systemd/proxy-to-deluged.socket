@@ -1,0 +1,8 @@
+[Unit]
+Description=Socket for Proxy to Deluge Daemon
+
+[Socket]
+ListenStream=58846
+
+[Install]
+WantedBy=sockets.target

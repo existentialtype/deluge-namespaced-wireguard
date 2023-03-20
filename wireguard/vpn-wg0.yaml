@@ -1,0 +1,15 @@
+name: vpn
+managed: true
+dns-server: [10.0.0.1]
+post-up:
+  - host-namespace: false
+    command: wg set wg0 private-key /etc/wireguard/vpn-wg0.key
+interfaces:
+  - name: wg0
+    address:
+      - 10.0.0.5/32
+    peers:
+      - public-key: Kx+wpJpj...
+        endpoint: example.com:12345
+        allowed-ips:
+          - 0.0.0.0/0
